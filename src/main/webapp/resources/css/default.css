@@ -1,0 +1,31 @@
+/*tamanho da fonte dos componentes do primefaces*/
+.ui-widget {  
+    font-size: 12px !important;  
+} 
+ 
+html,
+body {
+   margin:0;
+   padding:0;
+   height:100%;   
+}
+
+#content {
+   min-height:93%;
+   position:relative;
+}
+
+#header {
+	padding: 0px;
+	margin-bottom: 20px;
+	height: 40px;
+	background-color: #545454;
+	color: #fff;
+	box-shadow: 0px 2px 2px #ccc
+}
+
+#body {
+ 
+   padding:10px;
+   padding-bottom:60px;
+}

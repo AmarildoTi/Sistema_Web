@@ -1,0 +1,116 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+</h:head>
+
+<ui:composition template="/template/layoutBase.xhtml">
+
+	<ui:define name="content">
+
+		<p:tabView id = "tabs" style="width:600px;height:520px;margin:auto;">
+
+ 			<p:tab title="Cadastro de Funcionário">
+
+ 				<!-- ******** Começo Formulário Para Captura de Foto **********-->
+                    <h:form id="form-Foto">
+ 						<p:dialog header="Foto Funcionário" widgetVar="dlg" resizable="false">
+  						  <p:growl id="msgs" showDetail="true" />
+							<h:panelGrid columns="5" cellpadding="1">
+							  <!-- ******** Começo Captura Imagem **********-->
+								<p:photoCam widgetVar="pc" listener="#{photoCamBean.oncapture}"	update="photo" />
+								<p:outputPanel id="photo">
+									<p:imageCropper value="#{photoCamBean.croppedImage}"  rendered="#{not empty photoCamBean.filename and photoCamBean.existeArquivo(photoCamBean.filename)==true}" image="/resources/Fotos/#{photoCamBean.filename}.png" initialCoords="100,52,300,125" maxSize="116,140" minSize="116,140" />
+								</p:outputPanel>
+							  <!-- ******** Final Captura Imagem **********-->
+
+							  <!-- ******** Começo Recorta Imagem **********-->
+								<h:panelGroup id="cropped">
+									<p:graphicImage	rendered="#{not empty photoCamBean.newImageName and photoCamBean.existeArquivo(photoCamBean.newImageName)==true}" name="Fotos/#{photoCamBean.newImageName}.png"/>
+								</h:panelGroup>
+							  <!--******** Final Recorta Imagem **********-->
+							</h:panelGrid>
+						     <p:commandButton type="button" value="Capture" onclick="PF('pc').capture()" icon="fa fa-camera" style="color:blue" />
+						     <p:commandButton value="Crop" action="#{photoCamBean.crop}" update="cropped msgs tabs" icon="fa fa-scissors" style="color:blue" />
+						</p:dialog> 
+                    </h:form>
+ 				<!-- ******** Final Formulário Para Captura de Foto **********-->
+
+ 				<!-- ******** Começo Campos de Cadastramento **********-->
+				<h:form id="form-cadastro">
+
+					<h:panelGrid id="panelGrid-campos-form" columns="2"	cellpadding="3">
+ 
+						<p:outputLabel value="Foto:"/>
+ 						<h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="Foto" >
+							<p:graphicImage id="semfoto" rendered="#{empty photoCamBean.newImageName or photoCamBean.existeArquivo(photoCamBean.newImageName)==false}" library="Fotos" name="Modelo.jpg" cache="false"/>
+							<p:graphicImage id="comfoto" rendered="#{not empty photoCamBean.newImageName and photoCamBean.existeArquivo(photoCamBean.newImageName)==true}" library="Fotos" name="#{photoCamBean.newImageName}.png" cache="false"/>
+						</h:outputLink>
+
+						<p:outputLabel value="Nome:" for="inputText-nome" />
+						<p:inputText id="inputText-nome" style="width:300px"
+							value="#{cadastroFuncionarioBean.pessoaModel.nome}" />
+
+						<p:outputLabel value="Cep:" for="inputText-cep" />
+						<p:inputMask id="inputText-cep" mask="99999-999"  size="9" maxlength="9" onkeyup="proximoCampo(this,'tabs:form-cadastro:inputText-endereco')"  
+							onmouseover="meuMouseOver()"
+					        onmouseout="meuMouseOut()"
+						   	value="#{cadastroFuncionarioBean.logradouroModel.cep}">
+							<p:ajax event="blur"
+								listener="#{cadastroFuncionarioBean.encontraEndereco}"
+								process="inputText-cep" update="inputText-endereco" />
+						</p:inputMask>
+
+						<p:outputLabel value="Endereço:" for="inputText-endereco" />
+						<p:inputText id="inputText-endereco" style="width:300px" 
+							value="#{cadastroFuncionarioBean.logradouroModel.endereco}" />
+
+						<p:outputLabel value="Cargo:" for="inputText-cargo" />
+						<p:autoComplete id="inputText-cargo" style="width:300px"
+							value="#{cadastroFuncionarioBean.funcionarioModel.cargo}"
+							completeMethod="#{cadastroFuncionarioBean.pesquisarCargos}" />
+
+						<p:outputLabel value="Login:" for="inputText-login" />
+						<p:inputText id="inputText-login" style="width:300px"
+							value="#{cadastroFuncionarioBean.usuarioModel.usuario}" />
+
+						<p:outputLabel value="Senha:" for="inputText-senha" />
+						<p:inputText id="inputText-senha" style="width:300px"
+							value="#{cadastroFuncionarioBean.usuarioModel.senha}" />
+
+						<p:spacer />
+
+							<p:commandButton value="Salvar" id="commandButton-salvar" icon="fa fa-save" style="color:blue" actionListener="#{cadastroFuncionarioBean.salvar}" ajax="false" process="@all" update="cadastrarFuncionario" />
+
+					</h:panelGrid>
+ 			
+ 					<p:messages showDetail="true" autoUpdate="true" closable="true" severity="warn" />
+					<p:messages autoUpdate="true" closable="true" severity="error" />
+					<p:messages showDetail="true" autoUpdate="true" closable="true"	severity="info" />
+                    <div id="meulog"></div>
+
+ 				</h:form>
+				<!-- ******** Final Campos de Cadastramento **********-->
+
+			</p:tab>
+
+			<p:tab title="Upload Xml Funcionário">
+				<h:form id="form-upload" enctype="multipart/form-data">
+					<h:panelGrid id="panelGrid-upload-xml" columns="2" cellpadding="10">
+						<p:fileUpload value="#{cadastroFuncionarioBean.file}" mode="simple" skinSimple="true" label="Selecionar" />
+						<p:commandButton value="Importar..." icon="fa fa-upload" style="color:blue" ajax="false" actionListener="#{cadastroFuncionarioBean.UploadRegistros}" />
+					</h:panelGrid>
+				</h:form>
+			</p:tab>
+
+		</p:tabView>
+
+	</ui:define>
+
+</ui:composition>
+
+
+</html>
