@@ -52,6 +52,10 @@
 					<h:outputText value="#{funcionario.nome}" />
 				</p:column>
 
+				<p:column headerText="E-mail" filterBy="#{funcionario.email}" filterStyle="display:none" filterMatchMode="contains" >
+					<h:outputText value="#{funcionario.email}" />
+				</p:column>
+
 				<p:column headerText="Endereço" filterBy="#{funcionario.logradouroModel.endereco}" filterStyle="display:none" filterMatchMode="contains" >
 					<h:outputText value="#{funcionario.logradouroModel.endereco}" />
 				</p:column>
@@ -94,6 +98,15 @@
 						update="@form" />
 
 				</p:column>
+
+				<p:column headerText="" style="width:25px;">
+
+ 	              <p:commandButton  icon="fa fa-envelope" style="color:blue"
+ 	              action="#{envioEmailBean.enviarEmail(funcionario)}"   />
+
+				</p:column>
+
+
 
 			</p:dataTable>
 

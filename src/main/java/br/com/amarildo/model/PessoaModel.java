@@ -25,11 +25,16 @@ public class PessoaModel implements Serializable {
 	@GeneratedValue
 	@Column(name = "id_pessoa")
 	private Long codigo;
- 
+	
 	@NotEmpty
 	@Size(max = 100)
 	@Column(name="nome",length = 100, nullable = false)
 	private String  nome;
+
+	@NotEmpty
+	@Size(max = 100)
+	@Column(name="email",length = 100, nullable = false)
+	private String email;
 
 	@NotEmpty
 	@Size(max = 1)
@@ -89,6 +94,14 @@ public class PessoaModel implements Serializable {
 	}
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public String getOrigemCadastro() {
