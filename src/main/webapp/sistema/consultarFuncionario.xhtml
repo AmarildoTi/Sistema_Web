@@ -102,10 +102,10 @@
 				<p:column headerText="" style="width:25px;">
 
  	              <p:commandButton  icon="fa fa-envelope" style="color:blue"
- 	              action="#{envioEmailBean.enviarEmail(funcionario)}"   />
+ 	              action="#{envioEmailBean.enviarEmail(funcionario)}" 
+ 	              process="@this" />
 
 				</p:column>
-
 
 
 			</p:dataTable>

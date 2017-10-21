@@ -33,7 +33,7 @@ import br.com.amarildo.util.NegocioException;
 				.bodyHtml("<strong>Mensagem dos Corpo do E-mail Teste de Envio de E-mail </strong> ")
 				.send();
 		
-			NegocioException.MensagemInformacao("e-mail enviado com sucesso!!");
+			NegocioException.MensagemInformacao("e-mail enviado com sucesso!! para "+pessoaModel.getEmail());
 
 		}
 		
