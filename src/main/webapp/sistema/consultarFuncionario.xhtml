@@ -26,7 +26,17 @@
 
 		<h:form style="margin:auto;margin-left:2%;" id="form-consulta">
 
-            <p:dataTable id="dataTable-registros" var="funcionario"
+			<p:ajaxStatus>
+				<f:facet name="start">
+					<h:graphicImage library="imagens" name="ajax-loader.gif" />
+				</f:facet>
+				<f:facet name="complete">
+					<h:outputText value="" />
+   			        <p:messages showDetail="true" autoUpdate="true" closable="true"	severity="info" />
+				</f:facet>
+			</p:ajaxStatus>
+
+			<p:dataTable id="dataTable-registros" var="funcionario"
 			   value="#{consultaFuncionariosBean.pessoas}"
 			   widgetVar="processTable"
                emptyMessage="Nenhum Registro Encontrado com essa Descrição" 
@@ -109,8 +119,6 @@
 
 
 			</p:dataTable>
-
-    			<p:messages showDetail="true" autoUpdate="true" closable="true"	severity="info" />
 
 		</h:form>
 
