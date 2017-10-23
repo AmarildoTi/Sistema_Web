@@ -1,3 +1,15 @@
+/* Informações Comentario de identificadores para Componentes Id e Class
+Quando For Istilizar Um Componente Basta Colocar o Nome do Componente Conforme Abaixo
+body {configurações}
+header {configurações}
+footer {configurações}
+Quando For Istilizar  Componente Exemplo id="conteudo" identificado (#) Conforme Abaixo
+#conteudo {configurações}
+#login-dialog {configurações}
+Quando For Istilizar  Componente Exemplo styleClass="grid-login" identificado (.) Conforme Abaixo
+.grid-login {configurações}
+
+
 /*tamanho da fonte dos componentes do primefaces*/
 .ui-widget {  
     font-size: 12px !important;  
@@ -9,7 +21,7 @@ body {
 	font-size: 12px;
 	font-family: Arial, Helvetica, sans-serif;
 	margin: 0px;
-	font-weight: normal
+	font-weight: normal;
 }
 
 header {
@@ -18,19 +30,18 @@ header {
 	height: 35px;
 	background-color: black;
 	color: #fff;
-	box-shadow: 0px 2px 2px #ccc
+	box-shadow: 0px 2px 2px #ccc;
 }
 
 #conteudo {
-	padding: 0px 8px
+	padding: 0px 8px;
 }
 
 footer {
-	border-top: 1px solid #ccc;
-	padding: 5px 8px;
-	margin-top: 20px;
-	margin-bottom: 10px
-}
+	padding: 0px 8px;
+	margin-bottom: 10px;
+	text-align: center;
+ }
 
 #login-dialog {
 	width: 400px;
