@@ -3,7 +3,8 @@ package br.com.amarildo.util;
 import javax.faces.context.FacesContext;
 import javax.faces.application.FacesMessage;
 
-public class NegocioException extends Exception {
+public class NegocioException extends RuntimeException {
+	
 	private static final long serialVersionUID = 1L;
 
         //MOSTRAR throw new NegocioException("throw Mensagem de exceção");

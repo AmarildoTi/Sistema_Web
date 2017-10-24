@@ -26,15 +26,7 @@
 
 		<h:form style="margin:auto;margin-left:2%;" id="form-consulta">
 
-			<p:ajaxStatus>
-				<f:facet name="start">
-					<h:graphicImage library="imagens" name="ajax-loader.gif" />
-				</f:facet>
-				<f:facet name="complete">
-					<h:outputText value="" />
-   			        <p:messages showDetail="true" autoUpdate="true" closable="true"	severity="info" />
-				</f:facet>
-			</p:ajaxStatus>
+			<p:messages showDetail="true" autoUpdate="true" closable="true"	severity="info" />
 
 			<p:dataTable id="dataTable-registros" var="funcionario"
 			   value="#{consultaFuncionariosBean.pessoas}"

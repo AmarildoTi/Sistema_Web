@@ -7,7 +7,7 @@
    <!-- Carrega Imagem teste.png-->
    <header>  
 	   <h:graphicImage library="imagens" name="teste.png" />
-	   <div style="float: right; margin-right: 20px; margin-top: 8px">
+	   <div style="float: right; margin-right: 20px; margin-top: 12px">
 	   	   Olá #{usuarioController.nome}! Hoje é
 		   <h:outputText value="#{usuarioController.dataLogin}">
 	  		   <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
@@ -16,7 +16,7 @@
    </header>
 
 	<h:form>
- 		<p:menubar>
+ 		<p:menubar style="margin-top: 2px">
 			<p:menuitem value="Home" icon="fa fa-home" style="color:blue" url="home.xhtml" />
 			<p:menuitem value="Cadastro" icon="fa fa-user-plus" style="color:blue" url="cadastrarFuncionario.xhtml" />
 			<p:menuitem value="Consulta" icon="fa fa-book" style="color:blue" url="consultarFuncionario.xhtml"/>

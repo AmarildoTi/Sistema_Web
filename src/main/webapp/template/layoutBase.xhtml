@@ -1,25 +1,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
-	  xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-	  xmlns:h="http://xmlns.jcp.org/jsf/html"
-	  xmlns:f="http://xmlns.jcp.org/jsf/core"
-	  xmlns:p="http://primefaces.org/ui">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+
+<h:head>
+
+	<f:facet name="first">
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+	</f:facet>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title><ui:insert name="titulo">Sistema_web</ui:insert></title>
+
+	<h:outputStylesheet library="css" name="default.css" />
+	<h:outputScript library="js" name="utilidades.js" />
+
+</h:head>
+
 
 <body>
 
-	<h:head>
-
-		<f:facet name="first">
-			<meta charset="UTF-8" />
-			<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<p:ajaxStatus styleClass="ajax-status">
+		<f:facet name="start">
+			<h:graphicImage library="imagens" name="ajax-loader.gif" />
 		</f:facet>
-	  
-	  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-      <title><ui:insert name="titulo">Sistema_web</ui:insert></title>
-	  
-	  <h:outputStylesheet library="css" name="default.css"/>
-      <h:outputScript library="js" name="utilidades.js" />
-	
-	</h:head>
+		<f:facet name="complete">
+			<h:outputText value="" />
+		</f:facet>
+	</p:ajaxStatus>
 
 
 	<div id="header">
@@ -27,7 +38,7 @@
 	</div>
 
 	<div id="conteudo">
-		<ui:insert name="detalhes"/>
+		<ui:insert name="detalhes" />
 	</div>
 
 	<div id="footer">
