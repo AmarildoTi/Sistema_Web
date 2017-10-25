@@ -53,7 +53,7 @@ public class JsfExceptionHandler extends ExceptionHandlerWrapper {
 				} else {
 					handled = true;
 					log.error("Erro de sistema: " + exception.getMessage(), exception);
-					redirect("/index.xhtml");
+					redirect("/erro.xhtml");
 				}
 			} finally {
 				if (handled) {
