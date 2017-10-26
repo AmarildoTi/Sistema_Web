@@ -1,4 +1,4 @@
-package br.com.amarildo.util;
+package br.com.amarildo.util.mensagens;
 
 import javax.faces.context.FacesContext;
 import javax.faces.application.FacesMessage;

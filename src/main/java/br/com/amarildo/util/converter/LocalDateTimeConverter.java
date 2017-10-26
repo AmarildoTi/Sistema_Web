@@ -1,4 +1,4 @@
-package br.com.amarildo.util;
+package br.com.amarildo.util.converter;
 
 import java.time.Instant;
 import java.time.LocalDateTime;
@@ -14,7 +14,7 @@ import javax.faces.convert.FacesConverter;
 @FacesConverter(value= LocalDateTimeConverter.ID)
 public class LocalDateTimeConverter extends DateTimeConverter {
  
-	public static final String ID="br.com.amarildo.util.LocalDateTimeConverter"; 
+	public static final String ID="br.com.amarildo.util.converter.LocalDateTimeConverter"; 
  
 	@Override
 	public Object getAsObject(FacesContext facesContext, UIComponent uiComponent, String value) {

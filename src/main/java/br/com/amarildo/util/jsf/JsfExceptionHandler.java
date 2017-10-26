@@ -1,4 +1,4 @@
-package br.com.amarildo.util;
+package br.com.amarildo.util.jsf;
 
 import java.io.IOException;
 import java.util.Iterator;
@@ -14,6 +14,8 @@ import javax.faces.event.ExceptionQueuedEventContext;
 
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+
+import br.com.amarildo.util.mensagens.NegocioException;
 
 public class JsfExceptionHandler extends ExceptionHandlerWrapper {
 

@@ -1,4 +1,4 @@
-package br.com.amarildo.util;
+package br.com.amarildo.util.jsf;
 
 import javax.faces.context.ExceptionHandler;
 import javax.faces.context.ExceptionHandlerFactory;

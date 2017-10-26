@@ -12,7 +12,7 @@
 
 	<factory>
 		<exception-handler-factory>
-			br.com.amarildo.util.JsfExceptionHandlerFactory
+			br.com.amarildo.util.jsf.JsfExceptionHandlerFactory
 		</exception-handler-factory>
 	</factory>
 	

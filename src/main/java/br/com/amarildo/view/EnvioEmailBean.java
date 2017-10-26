@@ -9,8 +9,8 @@ import javax.inject.Named;
 import com.outjected.email.api.MailMessage;
 
 import br.com.amarildo.model.PessoaModel;
-import br.com.amarildo.util.Mailer;
-import br.com.amarildo.util.NegocioException;
+import br.com.amarildo.util.email.Mailer;
+import br.com.amarildo.util.mensagens.NegocioException;
 
 
 	@Named
@@ -30,7 +30,7 @@ import br.com.amarildo.util.NegocioException;
 			
 			message.to(pessoaModel.getEmail())
 				.subject(" Assunto do E-mail, Teste de envio ")
-				.bodyHtml("<strong>Mensagem dos Corpo do E-mail Teste de Envio de E-mail </strong> ")
+				.bodyHtml("<strong>Mensagem do Corpo do E-mail Teste de Envio de E-mail </strong> ")
 				.send();
 		
 			NegocioException.MensagemInformacao("e-mail enviado com sucesso!! para "+pessoaModel.getEmail());

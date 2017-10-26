@@ -32,7 +32,7 @@ import br.com.amarildo.model.PessoaModel;
 import br.com.amarildo.model.UsuarioModel;
 import br.com.amarildo.repository.FuncionarioRepository;
 import br.com.amarildo.repository.LogradouroRepository;
-import br.com.amarildo.util.NegocioException;
+import br.com.amarildo.util.mensagens.NegocioException;
 import br.com.correios.bsb.sigep.master.bean.cliente.AtendeClienteProxy;
 import br.com.correios.bsb.sigep.master.bean.cliente.EnderecoERP;
 
