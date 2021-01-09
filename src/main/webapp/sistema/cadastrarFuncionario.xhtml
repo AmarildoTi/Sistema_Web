@@ -23,13 +23,13 @@
 							  <!-- ******** Começo Captura Imagem **********-->
 								<p:photoCam widgetVar="pc" listener="#{photoCamBean.oncapture}"	update="photo" />
 								<p:outputPanel id="photo">
-									<p:imageCropper value="#{photoCamBean.croppedImage}"  rendered="#{not empty photoCamBean.filename and photoCamBean.existeArquivo(photoCamBean.filename)==true}" image="/resources/Fotos/#{photoCamBean.filename}.png" initialCoords="100,52,300,125" maxSize="116,140" minSize="116,140" />
+<!-- 									<p:imageCropper value="#{photoCamBean.croppedImage}"  rendered="#{not empty photoCamBean.filename and photoCamBean.existeArquivo(photoCamBean.filename)==true}" image="/resources/Fotos/#{photoCamBean.filename}.png" initialCoords="100,52,300,125" maxSize="116,140" minSize="116,140" /> -->
 								</p:outputPanel>
 							  <!-- ******** Final Captura Imagem **********-->
 
 							  <!-- ******** Começo Recorta Imagem **********-->
 								<h:panelGroup id="cropped">
-									<p:graphicImage	rendered="#{not empty photoCamBean.newImageName and photoCamBean.existeArquivo(photoCamBean.newImageName)==true}" name="Fotos/#{photoCamBean.newImageName}.png"/>
+<!-- 									<p:graphicImage	rendered="#{not empty photoCamBean.newImageName and photoCamBean.existeArquivo(photoCamBean.newImageName)==true}" name="Fotos/#{photoCamBean.newImageName}.png"/> -->
 								</h:panelGroup>
 							  <!--******** Final Recorta Imagem **********-->
 							</h:panelGrid>
@@ -46,8 +46,8 @@
  
 						<p:outputLabel value="Foto:"/>
  						<h:outputLink value="javascript:void(0)" onclick="PF('dlg').show();" title="Foto" >
-							<p:graphicImage id="semfoto" rendered="#{empty photoCamBean.newImageName or photoCamBean.existeArquivo(photoCamBean.newImageName)==false}" library="Fotos" name="Modelo.jpg" cache="false"/>
-							<p:graphicImage id="comfoto" rendered="#{not empty photoCamBean.newImageName and photoCamBean.existeArquivo(photoCamBean.newImageName)==true}" library="Fotos" name="#{photoCamBean.newImageName}.png" cache="false"/>
+<!-- 							<p:graphicImage id="semfoto" rendered="#{empty photoCamBean.newImageName or photoCamBean.existeArquivo(photoCamBean.newImageName)==false}" library="Fotos" name="Modelo.jpg" cache="false"/> -->
+<!-- 							<p:graphicImage id="comfoto" rendered="#{not empty photoCamBean.newImageName and photoCamBean.existeArquivo(photoCamBean.newImageName)==true}" library="Fotos" name="#{photoCamBean.newImageName}.png" cache="false"/> -->
 						</h:outputLink>
 
 						<p:outputLabel value="Nome:" for="inputText-nome" />
