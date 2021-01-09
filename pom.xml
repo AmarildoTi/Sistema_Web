@@ -163,7 +163,7 @@
           <scope>compile</scope>
         </dependency>
 
-        <!-- Abstração para envio de e-mails -->		
+        Abstração para envio de e-mails		
 		<dependency>
 			<groupId>com.outjected</groupId>
 			<artifactId>simple-email</artifactId>
