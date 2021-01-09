@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import br.com.amarildo.model.FuncionarioModel;
 import br.com.amarildo.repository.FuncionarioRepository;
-import br.com.amarildo.util.NegocioException;
-import br.com.amarildo.util.Transactional;
+import br.com.amarildo.util.jpa.Transactional;
+import br.com.amarildo.util.mensagens.NegocioException;
 
 public class FuncionarioController implements Serializable {
 	private static final long serialVersionUID = 1L;

@@ -14,7 +14,7 @@ import javax.inject.Named;
 import org.primefaces.event.CaptureEvent;
 import org.primefaces.model.CroppedImage;
 
-import br.com.amarildo.util.NegocioException;
+import br.com.amarildo.util.mensagens.NegocioException;
 
 @Named
 @ViewScoped

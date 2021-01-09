@@ -1,4 +1,4 @@
-package br.com.amarildo.util;
+package br.com.amarildo.util.jpa;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

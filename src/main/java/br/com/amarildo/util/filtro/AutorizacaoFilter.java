@@ -1,4 +1,4 @@
-package br.com.amarildo.util;
+package br.com.amarildo.util.filtro;
 
 import java.io.IOException;
 

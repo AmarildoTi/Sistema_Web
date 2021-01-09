@@ -1,4 +1,4 @@
-package br.com.amarildo.util;
+package br.com.amarildo.util.converter;
 
 import java.sql.Timestamp;
 import java.time.LocalDateTime;

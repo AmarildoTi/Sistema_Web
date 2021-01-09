@@ -1,0 +1,39 @@
+<html>
+ 
+  <body> 
+   
+   <table>
+
+     <tr>
+      <td style="width; 100px">Codigo:</td>
+      <td>$pessoaModel.codigo</td>
+     </tr>
+
+     <tr>
+      <td style="width; 100px">Funcionario:</td>
+      <td>$pessoaModel.nome</td>
+     </tr>
+
+   </table>
+
+<br/>
+
+  <table border="1" cellspacing="0" cellpadding="3" >
+    <tr>
+      <th> E-mail</th>
+      <th> Usuario </th>
+      <th> Endereco </th>
+      <th> Cargo</th>
+    </tr>     
+
+    <tr>
+      <th>$pessoaModel.email</th>
+      <th>$pessoaModel.funcionarioModel.usuarioModel.usuario</th>
+      <th>$pessoaModel.logradouroModel.endereco</th>
+      <th>$pessoaModel.funcionarioModel.cargo</th>
+    </tr>
+  </table>
+
+  </body>
+
+</html>

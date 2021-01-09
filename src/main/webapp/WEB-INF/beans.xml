@@ -7,7 +7,7 @@
 	   
 	<interceptors>
 		<class>
-		  br.com.amarildo.util.TransactionInterceptor
+		  br.com.amarildo.util.jpa.TransactionInterceptor
 		</class>
 	</interceptors>
 	   

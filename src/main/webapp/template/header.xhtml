@@ -7,7 +7,7 @@
    <!-- Carrega Imagem teste.png-->
    <header>  
 	   <h:graphicImage library="imagens" name="teste.png" />
-	   <div style="float: right; margin-right: 20px; margin-top: 8px">
+	   <div style="float: right; margin-right: 20px; margin-top: 12px">
 	   	   Olá #{usuarioController.nome}! Hoje é
 		   <h:outputText value="#{usuarioController.dataLogin}">
 	  		   <f:convertDateTime pattern="dd/MM/yyyy HH:mm:ss" />
@@ -16,15 +16,15 @@
    </header>
 
 	<h:form>
- 		<p:menubar>
+ 		<p:menubar style="margin-top: 2px">
 			<p:menuitem value="Home" icon="fa fa-home" style="color:blue" url="home.xhtml" />
 			<p:menuitem value="Cadastro" icon="fa fa-user-plus" style="color:blue" url="cadastrarFuncionario.xhtml" />
 			<p:menuitem value="Consulta" icon="fa fa-book" style="color:blue" url="consultarFuncionario.xhtml"/>
 			<p:menuitem value="Consulta por Carousel" icon="fa fa-book" style="color:blue" url="consultarFuncionarioCarousel.xhtml"/>
-			<p:menuitem value="Gráfico tipo Pessoa" icon="fa fa-pie-chart" style="color:blue" url="graficoPizzaFuncionario.xhtml"/>
-			<p:menuitem value="Exportar XML Pessoa" icon="fa fa-file-code-o" style="color:blue" url="exportarRegistrosXml.xhtml"/>
-			<p:menuitem value="Relátorio PDF Pessoa" icon="fa fa-file-pdf-o" style="color:blue" url="relatorioPdf.xhtml"/>
-			<p:menuitem value="Upload de Arquivo" icon="fa fa-upload" style="color:blue" url="uploadDeArquivos.xhtml"/>
+			<p:menuitem value="Gráfico " icon="fa fa-pie-chart" style="color:blue" url="graficoPizzaFuncionario.xhtml"/>
+			<p:menuitem value="Exportar XML" icon="fa fa-file-code-o" style="color:blue" url="exportarRegistrosXml.xhtml"/>
+			<p:menuitem value="Relátorio PDF" icon="fa fa-file-pdf-o" style="color:blue" url="relatorioPdf.xhtml"/>
+			<p:menuitem value="Upload Arquivo" icon="fa fa-upload" style="color:blue" url="uploadDeArquivos.xhtml"/>
 			<f:facet name="options">            
             	<p:commandButton value="Logout" icon="fa fa-external-link" style="color:blue" action="#{loginBean.Logout}" />
         	</f:facet>

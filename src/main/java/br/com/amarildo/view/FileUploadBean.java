@@ -13,7 +13,7 @@ import javax.inject.Named;
 import org.primefaces.event.FileUploadEvent;
 import org.primefaces.model.UploadedFile;
 
-import br.com.amarildo.util.NegocioException;
+import br.com.amarildo.util.mensagens.NegocioException;
 
 
 @Named

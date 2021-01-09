@@ -32,7 +32,7 @@ import br.com.amarildo.model.PessoaModel;
 import br.com.amarildo.model.UsuarioModel;
 import br.com.amarildo.repository.FuncionarioRepository;
 import br.com.amarildo.repository.LogradouroRepository;
-import br.com.amarildo.util.NegocioException;
+import br.com.amarildo.util.mensagens.NegocioException;
 import br.com.correios.bsb.sigep.master.bean.cliente.AtendeClienteProxy;
 import br.com.correios.bsb.sigep.master.bean.cliente.EnderecoERP;
 
@@ -175,6 +175,7 @@ public class CadastroFuncionarioBean implements Serializable {
 
 					// Pegando os Elementos da entidade em Xml
 					String nome  = elementDados.getElementsByTagName("nome").item(0).getChildNodes().item(0).getNodeValue();
+					String email  = elementDados.getElementsByTagName("email").item(0).getChildNodes().item(0).getNodeValue();
 					String endereco = elementDados.getElementsByTagName("endereco").item(0).getChildNodes().item(0).getNodeValue();
 					String cep = elementDados.getElementsByTagName("cep").item(0).getChildNodes().item(0).getNodeValue();
 					String cargo = elementDados.getElementsByTagName("cargo").item(0).getChildNodes().item(0).getNodeValue();
@@ -186,6 +187,7 @@ public class CadastroFuncionarioBean implements Serializable {
 
 					// Seta os dados dos Elementos em Xml
 					pessoaModel.setNome(nome);
+					pessoaModel.setEmail(email);
 					logradouroModel.setEndereco(endereco);
 					logradouroModel.setCep(cep);
 					funcionarioModel.setCargo(cargo);
