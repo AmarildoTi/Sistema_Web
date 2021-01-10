@@ -7,7 +7,7 @@
    <tag>
     <tag-name>LocalDateTimeConverter</tag-name>
     <converter>
-     <converter-id>br.com.amarildo.util.LocalDateTimeConverter</converter-id>
+     <converter-id>br.com.amarildo.util.converter.LocalDateTimeConverter</converter-id>
     </converter>
    </tag>
 </facelet-taglib>

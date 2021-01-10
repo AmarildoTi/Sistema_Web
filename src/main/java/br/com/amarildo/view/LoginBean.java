@@ -10,7 +10,7 @@ import javax.inject.Named;
 import br.com.amarildo.controller.UsuarioController;
 import br.com.amarildo.model.UsuarioModel;
 import br.com.amarildo.repository.UsuarioRepository;
-import br.com.amarildo.util.NegocioException;
+import br.com.amarildo.util.mensagens.NegocioException;
 
 @Named
 @RequestScoped

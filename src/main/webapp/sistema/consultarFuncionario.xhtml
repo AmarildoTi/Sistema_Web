@@ -10,7 +10,7 @@
 
 <ui:composition template="/template/layoutBase.xhtml">
 
-	<ui:define name="content">
+	<ui:define name="detalhes">
 
 		<p:dialog header="Editar cadastro de funcionário" 
 		          id="dialog-modal-editar"
@@ -26,7 +26,9 @@
 
 		<h:form style="margin:auto;margin-left:2%;" id="form-consulta">
 
-            <p:dataTable id="dataTable-registros" var="funcionario"
+			<p:messages showDetail="true" autoUpdate="true" closable="true"	severity="info" />
+
+			<p:dataTable id="dataTable-registros" var="funcionario"
 			   value="#{consultaFuncionariosBean.pessoas}"
 			   widgetVar="processTable"
                emptyMessage="Nenhum Registro Encontrado com essa Descrição" 
@@ -44,35 +46,39 @@
                  </p:outputPanel>
                 </f:facet>
 
-				<p:column headerText="Código" filterBy="#{funcionario.codigo}" filterStyle="display:none" filterMatchMode="contains" >
+				<p:column headerText="Código" sortBy="#{funcionario.codigo}" filterBy="#{funcionario.codigo}" filterStyle="display:none" filterMatchMode="contains" width="70" style="font-size:13px;" >
 					<h:outputText value="#{funcionario.codigo}" />
 				</p:column>
 
-				<p:column headerText="Nome" filterBy="#{funcionario.nome}" filterStyle="display:none" filterMatchMode="contains" >
+				<p:column headerText="Nome" filterBy="#{funcionario.nome}" filterStyle="display:none" filterMatchMode="contains" style="font-size:13px;" >
 					<h:outputText value="#{funcionario.nome}" />
 				</p:column>
 
-				<p:column headerText="Endereço" filterBy="#{funcionario.logradouroModel.endereco}" filterStyle="display:none" filterMatchMode="contains" >
+				<p:column headerText="E-mail" filterBy="#{funcionario.email}" filterStyle="display:none" filterMatchMode="contains" style="font-size:13px;" >
+					<h:outputText value="#{funcionario.email}" />
+				</p:column>
+
+				<p:column headerText="Endereço" filterBy="#{funcionario.logradouroModel.endereco}" filterStyle="display:none" filterMatchMode="contains" style="font-size:13px;" >
 					<h:outputText value="#{funcionario.logradouroModel.endereco}" />
 				</p:column>
 
-				<p:column headerText="Cep" filterBy="#{funcionario.logradouroModel.cep}" filterStyle="display:none" filterMatchMode="contains" >
+				<p:column headerText="Cep" filterBy="#{funcionario.logradouroModel.cep}" filterStyle="display:none" filterMatchMode="contains" width="90" style="font-size:13px;" >
 					<h:outputText value="#{funcionario.logradouroModel.cep}" />
 				</p:column>
 
-				<p:column headerText="Cargo" filterBy="#{funcionario.funcionarioModel.cargo}" filterStyle="display:none" filterMatchMode="contains" >
+				<p:column headerText="Cargo" filterBy="#{funcionario.funcionarioModel.cargo}" filterStyle="display:none" filterMatchMode="contains" style="font-size:13px;" >
 					<h:outputText value="#{funcionario.funcionarioModel.cargo}" />
 				</p:column>
 
-				<p:column headerText="Login" filterBy="#{funcionario.funcionarioModel.usuarioModel.usuario}" filterStyle="display:none" filterMatchMode="contains" >
+				<p:column headerText="Login" filterBy="#{funcionario.funcionarioModel.usuarioModel.usuario}" filterStyle="display:none" filterMatchMode="contains" width="70" style="font-size:13px;" >
 					<h:outputText value="#{funcionario.funcionarioModel.usuarioModel.usuario}" />
 				</p:column>
 
-				<p:column headerText="Senha" filterBy="#{funcionario.funcionarioModel.usuarioModel.senha}" filterStyle="display:none" filterMatchMode="contains" >
+				<p:column headerText="Senha" filterBy="#{funcionario.funcionarioModel.usuarioModel.senha}" filterStyle="display:none" filterMatchMode="contains" width="70" style="font-size:13px;" >
 					<h:outputText value="#{funcionario.funcionarioModel.usuarioModel.senha}" />
 				</p:column>
 
-				<p:column headerText="Usuário Cadastrado por" filterBy="#{funcionario.usuarioModel.usuario}" filterStyle="display:none" filterMatchMode="contains" >
+				<p:column headerText="Usuário Cadastrado por" filterBy="#{funcionario.usuarioModel.usuario}" filterStyle="display:none" filterMatchMode="contains" width="80" style="font-size:13px;" >
 					<h:outputText value="#{funcionario.usuarioModel.usuario}" />
 				</p:column>
 
@@ -94,6 +100,15 @@
 						update="@form" />
 
 				</p:column>
+
+				<p:column headerText="" style="width:25px;">
+
+ 	              <p:commandButton  icon="fa fa-envelope" style="color:blue" title="Enviar E-mail"
+ 	              action="#{envioEmailBean.enviarEmail(funcionario)}" 
+ 	              process="@this" />
+
+				</p:column>
+
 
 			</p:dataTable>
 

@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import br.com.amarildo.model.PessoaModel;
 import br.com.amarildo.repository.PessoaRepository;
-import br.com.amarildo.util.NegocioException;
-import br.com.amarildo.util.Transactional;
+import br.com.amarildo.util.jpa.Transactional;
+import br.com.amarildo.util.mensagens.NegocioException;
 
 public class PessoaController implements Serializable {
 	private static final long serialVersionUID = 1L;

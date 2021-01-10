@@ -6,8 +6,8 @@ import javax.inject.Inject;
 
 import br.com.amarildo.model.LogradouroModel;
 import br.com.amarildo.repository.LogradouroRepository;
-import br.com.amarildo.util.NegocioException;
-import br.com.amarildo.util.Transactional;
+import br.com.amarildo.util.jpa.Transactional;
+import br.com.amarildo.util.mensagens.NegocioException;
 
 public class LogradouroController implements Serializable {
 	private static final long serialVersionUID = 1L;

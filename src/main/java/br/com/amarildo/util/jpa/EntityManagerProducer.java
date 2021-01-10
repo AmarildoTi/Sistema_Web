@@ -1,4 +1,4 @@
-package br.com.amarildo.util;
+package br.com.amarildo.util.jpa;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.context.RequestScoped;

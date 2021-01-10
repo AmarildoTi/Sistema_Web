@@ -15,7 +15,7 @@ import br.com.amarildo.controller.PessoaController;
 import br.com.amarildo.controller.UsuarioController;
 import br.com.amarildo.model.PessoaModel;
 import br.com.amarildo.repository.PessoaRepository;
-import br.com.amarildo.util.NegocioException;
+import br.com.amarildo.util.mensagens.NegocioException;
 
 @Named
 @ViewScoped

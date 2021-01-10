@@ -55,6 +55,7 @@ public class ExportarRegistrosXmlBean implements Serializable {
 			Element elementPessoa = new Element("funcionario");
 			elementPessoa.addContent(new Element("codigo").setText(pessoa.getFuncionarioModel().getCodigo().toString()));
 			elementPessoa.addContent(new Element("nome").setText(pessoa.getNome()));
+			elementPessoa.addContent(new Element("email").setText(pessoa.getEmail()));
 			elementPessoa.addContent(new Element("Endereco").setText(pessoa.getLogradouroModel().getEndereco()));
 			elementPessoa.addContent(new Element("Cep").setText(pessoa.getLogradouroModel().getCep()));
 			elementPessoa.addContent(new Element("cargo").setText(pessoa.getFuncionarioModel().getCargo()));
