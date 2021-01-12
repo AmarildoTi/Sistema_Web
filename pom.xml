@@ -167,8 +167,7 @@
 		<dependency>
 			<groupId>com.outjected</groupId>
 			<artifactId>simple-email</artifactId>
-			<version>0.2.5-SNAPSHOT</version>
-			<scope>compile</scope>
+			<version>2.2</version>
 		</dependency>
 
 		<!-- Requerido para envio de e-mails -->

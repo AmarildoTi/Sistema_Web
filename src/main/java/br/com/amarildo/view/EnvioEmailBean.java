@@ -1,5 +1,7 @@
 package br.com.amarildo.view;
 
+import java.io.File;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Locale;
 
@@ -37,7 +39,7 @@ import br.com.amarildo.util.mensagens.NegocioException;
 		@Inject
 		private Mailer mailer;
 		
-		public void enviarEmail(PessoaModel pessoaModel) {
+		public void enviarEmail(PessoaModel pessoaModel) throws IOException {
 			
 			MailMessage message = mailer.novaMensagem();
 			
@@ -46,7 +48,8 @@ import br.com.amarildo.util.mensagens.NegocioException;
 			message.to(pessoaModel.getEmail())
 				.subject(" Assunto do E-mail, Teste de envio ")
 				//.bodyHtml("<strong>Mensagem do Corpo do E-mail Teste de Envio de E-mail </strong> ")
-				.bodyHtml(new VelocityTemplate(getClass().getResourceAsStream("/br/com/amarildo/mensagens/CorpoEmail.template")))
+				//.bodyHtml(new VelocityTemplate(getClass().getResourceAsStream("/br/com/amarildo/mensagens/CorpoEmail.template")))
+				.bodyHtml(new VelocityTemplate(new File("/br/com/amarildo/mensagens/CorpoEmail.template")))
 				.put("pessoaModel", pessoaModel)
 				.send();
 		
