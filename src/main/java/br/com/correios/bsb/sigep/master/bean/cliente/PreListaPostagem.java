@@ -10,6 +10,8 @@ package br.com.correios.bsb.sigep.master.bean.cliente;
 public class PreListaPostagem  implements java.io.Serializable {
     private br.com.correios.bsb.sigep.master.bean.cliente.CartaoPostagemERP cartaoPostagem;
 
+    private br.com.correios.bsb.sigep.master.bean.cliente.SimNao conteudoProibido;
+
     private java.util.Calendar dataAtualizacaoCliente;
 
     private java.util.Calendar dataAtualizacaoSara;
@@ -37,6 +39,7 @@ public class PreListaPostagem  implements java.io.Serializable {
 
     public PreListaPostagem(
            br.com.correios.bsb.sigep.master.bean.cliente.CartaoPostagemERP cartaoPostagem,
+           br.com.correios.bsb.sigep.master.bean.cliente.SimNao conteudoProibido,
            java.util.Calendar dataAtualizacaoCliente,
            java.util.Calendar dataAtualizacaoSara,
            java.util.Calendar dataFechamento,
@@ -49,6 +52,7 @@ public class PreListaPostagem  implements java.io.Serializable {
            org.apache.axis.types.UnsignedShort[] plpXmlRetorno,
            br.com.correios.bsb.sigep.master.bean.cliente.StatusPlp status) {
            this.cartaoPostagem = cartaoPostagem;
+           this.conteudoProibido = conteudoProibido;
            this.dataAtualizacaoCliente = dataAtualizacaoCliente;
            this.dataAtualizacaoSara = dataAtualizacaoSara;
            this.dataFechamento = dataFechamento;
@@ -80,6 +84,26 @@ public class PreListaPostagem  implements java.io.Serializable {
      */
     public void setCartaoPostagem(br.com.correios.bsb.sigep.master.bean.cliente.CartaoPostagemERP cartaoPostagem) {
         this.cartaoPostagem = cartaoPostagem;
+    }
+
+
+    /**
+     * Gets the conteudoProibido value for this PreListaPostagem.
+     * 
+     * @return conteudoProibido
+     */
+    public br.com.correios.bsb.sigep.master.bean.cliente.SimNao getConteudoProibido() {
+        return conteudoProibido;
+    }
+
+
+    /**
+     * Sets the conteudoProibido value for this PreListaPostagem.
+     * 
+     * @param conteudoProibido
+     */
+    public void setConteudoProibido(br.com.correios.bsb.sigep.master.bean.cliente.SimNao conteudoProibido) {
+        this.conteudoProibido = conteudoProibido;
     }
 
 
@@ -341,6 +365,9 @@ public class PreListaPostagem  implements java.io.Serializable {
             ((this.cartaoPostagem==null && other.getCartaoPostagem()==null) || 
              (this.cartaoPostagem!=null &&
               this.cartaoPostagem.equals(other.getCartaoPostagem()))) &&
+            ((this.conteudoProibido==null && other.getConteudoProibido()==null) || 
+             (this.conteudoProibido!=null &&
+              this.conteudoProibido.equals(other.getConteudoProibido()))) &&
             ((this.dataAtualizacaoCliente==null && other.getDataAtualizacaoCliente()==null) || 
              (this.dataAtualizacaoCliente!=null &&
               this.dataAtualizacaoCliente.equals(other.getDataAtualizacaoCliente()))) &&
@@ -383,6 +410,9 @@ public class PreListaPostagem  implements java.io.Serializable {
         int _hashCode = 1;
         if (getCartaoPostagem() != null) {
             _hashCode += getCartaoPostagem().hashCode();
+        }
+        if (getConteudoProibido() != null) {
+            _hashCode += getConteudoProibido().hashCode();
         }
         if (getDataAtualizacaoCliente() != null) {
             _hashCode += getDataAtualizacaoCliente().hashCode();
@@ -451,6 +481,13 @@ public class PreListaPostagem  implements java.io.Serializable {
         elemField.setFieldName("cartaoPostagem");
         elemField.setXmlName(new javax.xml.namespace.QName("", "cartaoPostagem"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "cartaoPostagemERP"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("conteudoProibido");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "conteudoProibido"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "simNao"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

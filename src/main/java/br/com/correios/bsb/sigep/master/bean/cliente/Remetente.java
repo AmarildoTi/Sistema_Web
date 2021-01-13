@@ -8,11 +8,13 @@
 package br.com.correios.bsb.sigep.master.bean.cliente;
 
 public class Remetente  extends br.com.correios.bsb.sigep.master.bean.cliente.Pessoa  implements java.io.Serializable {
-    private java.lang.String email;
+    private java.lang.String celular;
 
-    private java.lang.String empresa;
+    private java.lang.String ddd_celular;
 
-    private java.lang.String fax;
+    private java.lang.String identificacao;
+
+    private java.lang.String sms;
 
     public Remetente() {
     }
@@ -23,90 +25,114 @@ public class Remetente  extends br.com.correios.bsb.sigep.master.bean.cliente.Pe
            java.lang.String cidade,
            java.lang.String complemento,
            java.lang.String ddd,
-           java.lang.String endereco,
+           java.lang.String email,
+           java.lang.String logradouro,
            java.lang.String nome,
            java.lang.String numero,
-           java.lang.String pais,
+           java.lang.String referencia,
            java.lang.String telefone,
            java.lang.String uf,
-           java.lang.String email,
-           java.lang.String empresa,
-           java.lang.String fax) {
+           java.lang.String celular,
+           java.lang.String ddd_celular,
+           java.lang.String identificacao,
+           java.lang.String sms) {
         super(
             bairro,
             cep,
             cidade,
             complemento,
             ddd,
-            endereco,
+            email,
+            logradouro,
             nome,
             numero,
-            pais,
+            referencia,
             telefone,
             uf);
-        this.email = email;
-        this.empresa = empresa;
-        this.fax = fax;
+        this.celular = celular;
+        this.ddd_celular = ddd_celular;
+        this.identificacao = identificacao;
+        this.sms = sms;
     }
 
 
     /**
-     * Gets the email value for this Remetente.
+     * Gets the celular value for this Remetente.
      * 
-     * @return email
+     * @return celular
      */
-    public java.lang.String getEmail() {
-        return email;
+    public java.lang.String getCelular() {
+        return celular;
     }
 
 
     /**
-     * Sets the email value for this Remetente.
+     * Sets the celular value for this Remetente.
      * 
-     * @param email
+     * @param celular
      */
-    public void setEmail(java.lang.String email) {
-        this.email = email;
+    public void setCelular(java.lang.String celular) {
+        this.celular = celular;
     }
 
 
     /**
-     * Gets the empresa value for this Remetente.
+     * Gets the ddd_celular value for this Remetente.
      * 
-     * @return empresa
+     * @return ddd_celular
      */
-    public java.lang.String getEmpresa() {
-        return empresa;
+    public java.lang.String getDdd_celular() {
+        return ddd_celular;
     }
 
 
     /**
-     * Sets the empresa value for this Remetente.
+     * Sets the ddd_celular value for this Remetente.
      * 
-     * @param empresa
+     * @param ddd_celular
      */
-    public void setEmpresa(java.lang.String empresa) {
-        this.empresa = empresa;
+    public void setDdd_celular(java.lang.String ddd_celular) {
+        this.ddd_celular = ddd_celular;
     }
 
 
     /**
-     * Gets the fax value for this Remetente.
+     * Gets the identificacao value for this Remetente.
      * 
-     * @return fax
+     * @return identificacao
      */
-    public java.lang.String getFax() {
-        return fax;
+    public java.lang.String getIdentificacao() {
+        return identificacao;
     }
 
 
     /**
-     * Sets the fax value for this Remetente.
+     * Sets the identificacao value for this Remetente.
      * 
-     * @param fax
+     * @param identificacao
      */
-    public void setFax(java.lang.String fax) {
-        this.fax = fax;
+    public void setIdentificacao(java.lang.String identificacao) {
+        this.identificacao = identificacao;
+    }
+
+
+    /**
+     * Gets the sms value for this Remetente.
+     * 
+     * @return sms
+     */
+    public java.lang.String getSms() {
+        return sms;
+    }
+
+
+    /**
+     * Sets the sms value for this Remetente.
+     * 
+     * @param sms
+     */
+    public void setSms(java.lang.String sms) {
+        this.sms = sms;
     }
 
     private java.lang.Object __equalsCalc = null;
@@ -121,15 +147,18 @@ public class Remetente  extends br.com.correios.bsb.sigep.master.bean.cliente.Pe
         __equalsCalc = obj;
         boolean _equals;
         _equals = super.equals(obj) && 
-            ((this.email==null && other.getEmail()==null) || 
-             (this.email!=null &&
-              this.email.equals(other.getEmail()))) &&
-            ((this.empresa==null && other.getEmpresa()==null) || 
-             (this.empresa!=null &&
-              this.empresa.equals(other.getEmpresa()))) &&
-            ((this.fax==null && other.getFax()==null) || 
-             (this.fax!=null &&
-              this.fax.equals(other.getFax())));
+            ((this.celular==null && other.getCelular()==null) || 
+             (this.celular!=null &&
+              this.celular.equals(other.getCelular()))) &&
+            ((this.ddd_celular==null && other.getDdd_celular()==null) || 
+             (this.ddd_celular!=null &&
+              this.ddd_celular.equals(other.getDdd_celular()))) &&
+            ((this.identificacao==null && other.getIdentificacao()==null) || 
+             (this.identificacao!=null &&
+              this.identificacao.equals(other.getIdentificacao()))) &&
+            ((this.sms==null && other.getSms()==null) || 
+             (this.sms!=null &&
+              this.sms.equals(other.getSms())));
         __equalsCalc = null;
         return _equals;
     }
@@ -141,14 +170,17 @@ public class Remetente  extends br.com.correios.bsb.sigep.master.bean.cliente.Pe
         }
         __hashCodeCalc = true;
         int _hashCode = super.hashCode();
-        if (getEmail() != null) {
-            _hashCode += getEmail().hashCode();
+        if (getCelular() != null) {
+            _hashCode += getCelular().hashCode();
         }
-        if (getEmpresa() != null) {
-            _hashCode += getEmpresa().hashCode();
+        if (getDdd_celular() != null) {
+            _hashCode += getDdd_celular().hashCode();
         }
-        if (getFax() != null) {
-            _hashCode += getFax().hashCode();
+        if (getIdentificacao() != null) {
+            _hashCode += getIdentificacao().hashCode();
+        }
+        if (getSms() != null) {
+            _hashCode += getSms().hashCode();
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -161,22 +193,29 @@ public class Remetente  extends br.com.correios.bsb.sigep.master.bean.cliente.Pe
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "remetente"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("email");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "email"));
+        elemField.setFieldName("celular");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "celular"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("empresa");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "empresa"));
+        elemField.setFieldName("ddd_celular");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ddd_celular"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("fax");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "fax"));
+        elemField.setFieldName("identificacao");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "identificacao"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("sms");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "sms"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

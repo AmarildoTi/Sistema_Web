@@ -12,11 +12,19 @@ public class ServicoSigep  implements java.io.Serializable {
 
     private br.com.correios.bsb.sigep.master.bean.cliente.ChancelaMaster chancela;
 
+    private java.lang.String descricao;
+
     private java.lang.Boolean exigeDimensoes;
 
     private java.lang.Boolean exigeValorCobrar;
 
     private long imitm;
+
+    private java.lang.String pagamentoEntrega;
+
+    private java.lang.String remessaAgrupada;
+
+    private br.com.correios.bsb.sigep.master.bean.cliente.SimNao restricao;
 
     private long servico;
 
@@ -30,17 +38,25 @@ public class ServicoSigep  implements java.io.Serializable {
     public ServicoSigep(
            br.com.correios.bsb.sigep.master.bean.cliente.CategoriaServico categoriaServico,
            br.com.correios.bsb.sigep.master.bean.cliente.ChancelaMaster chancela,
+           java.lang.String descricao,
            java.lang.Boolean exigeDimensoes,
            java.lang.Boolean exigeValorCobrar,
            long imitm,
+           java.lang.String pagamentoEntrega,
+           java.lang.String remessaAgrupada,
+           br.com.correios.bsb.sigep.master.bean.cliente.SimNao restricao,
            long servico,
            br.com.correios.bsb.sigep.master.bean.cliente.ServicoERP servicoERP,
            java.lang.String ssiCoCodigoPostal) {
            this.categoriaServico = categoriaServico;
            this.chancela = chancela;
+           this.descricao = descricao;
            this.exigeDimensoes = exigeDimensoes;
            this.exigeValorCobrar = exigeValorCobrar;
            this.imitm = imitm;
+           this.pagamentoEntrega = pagamentoEntrega;
+           this.remessaAgrupada = remessaAgrupada;
+           this.restricao = restricao;
            this.servico = servico;
            this.servicoERP = servicoERP;
            this.ssiCoCodigoPostal = ssiCoCodigoPostal;
@@ -84,6 +100,26 @@ public class ServicoSigep  implements java.io.Serializable {
      */
     public void setChancela(br.com.correios.bsb.sigep.master.bean.cliente.ChancelaMaster chancela) {
         this.chancela = chancela;
+    }
+
+
+    /**
+     * Gets the descricao value for this ServicoSigep.
+     * 
+     * @return descricao
+     */
+    public java.lang.String getDescricao() {
+        return descricao;
+    }
+
+
+    /**
+     * Sets the descricao value for this ServicoSigep.
+     * 
+     * @param descricao
+     */
+    public void setDescricao(java.lang.String descricao) {
+        this.descricao = descricao;
     }
 
 
@@ -144,6 +180,66 @@ public class ServicoSigep  implements java.io.Serializable {
      */
     public void setImitm(long imitm) {
         this.imitm = imitm;
+    }
+
+
+    /**
+     * Gets the pagamentoEntrega value for this ServicoSigep.
+     * 
+     * @return pagamentoEntrega
+     */
+    public java.lang.String getPagamentoEntrega() {
+        return pagamentoEntrega;
+    }
+
+
+    /**
+     * Sets the pagamentoEntrega value for this ServicoSigep.
+     * 
+     * @param pagamentoEntrega
+     */
+    public void setPagamentoEntrega(java.lang.String pagamentoEntrega) {
+        this.pagamentoEntrega = pagamentoEntrega;
+    }
+
+
+    /**
+     * Gets the remessaAgrupada value for this ServicoSigep.
+     * 
+     * @return remessaAgrupada
+     */
+    public java.lang.String getRemessaAgrupada() {
+        return remessaAgrupada;
+    }
+
+
+    /**
+     * Sets the remessaAgrupada value for this ServicoSigep.
+     * 
+     * @param remessaAgrupada
+     */
+    public void setRemessaAgrupada(java.lang.String remessaAgrupada) {
+        this.remessaAgrupada = remessaAgrupada;
+    }
+
+
+    /**
+     * Gets the restricao value for this ServicoSigep.
+     * 
+     * @return restricao
+     */
+    public br.com.correios.bsb.sigep.master.bean.cliente.SimNao getRestricao() {
+        return restricao;
+    }
+
+
+    /**
+     * Sets the restricao value for this ServicoSigep.
+     * 
+     * @param restricao
+     */
+    public void setRestricao(br.com.correios.bsb.sigep.master.bean.cliente.SimNao restricao) {
+        this.restricao = restricao;
     }
 
 
@@ -224,6 +320,9 @@ public class ServicoSigep  implements java.io.Serializable {
             ((this.chancela==null && other.getChancela()==null) || 
              (this.chancela!=null &&
               this.chancela.equals(other.getChancela()))) &&
+            ((this.descricao==null && other.getDescricao()==null) || 
+             (this.descricao!=null &&
+              this.descricao.equals(other.getDescricao()))) &&
             ((this.exigeDimensoes==null && other.getExigeDimensoes()==null) || 
              (this.exigeDimensoes!=null &&
               this.exigeDimensoes.equals(other.getExigeDimensoes()))) &&
@@ -231,6 +330,15 @@ public class ServicoSigep  implements java.io.Serializable {
              (this.exigeValorCobrar!=null &&
               this.exigeValorCobrar.equals(other.getExigeValorCobrar()))) &&
             this.imitm == other.getImitm() &&
+            ((this.pagamentoEntrega==null && other.getPagamentoEntrega()==null) || 
+             (this.pagamentoEntrega!=null &&
+              this.pagamentoEntrega.equals(other.getPagamentoEntrega()))) &&
+            ((this.remessaAgrupada==null && other.getRemessaAgrupada()==null) || 
+             (this.remessaAgrupada!=null &&
+              this.remessaAgrupada.equals(other.getRemessaAgrupada()))) &&
+            ((this.restricao==null && other.getRestricao()==null) || 
+             (this.restricao!=null &&
+              this.restricao.equals(other.getRestricao()))) &&
             this.servico == other.getServico() &&
             ((this.servicoERP==null && other.getServicoERP()==null) || 
              (this.servicoERP!=null &&
@@ -255,6 +363,9 @@ public class ServicoSigep  implements java.io.Serializable {
         if (getChancela() != null) {
             _hashCode += getChancela().hashCode();
         }
+        if (getDescricao() != null) {
+            _hashCode += getDescricao().hashCode();
+        }
         if (getExigeDimensoes() != null) {
             _hashCode += getExigeDimensoes().hashCode();
         }
@@ -262,6 +373,15 @@ public class ServicoSigep  implements java.io.Serializable {
             _hashCode += getExigeValorCobrar().hashCode();
         }
         _hashCode += new Long(getImitm()).hashCode();
+        if (getPagamentoEntrega() != null) {
+            _hashCode += getPagamentoEntrega().hashCode();
+        }
+        if (getRemessaAgrupada() != null) {
+            _hashCode += getRemessaAgrupada().hashCode();
+        }
+        if (getRestricao() != null) {
+            _hashCode += getRestricao().hashCode();
+        }
         _hashCode += new Long(getServico()).hashCode();
         if (getServicoERP() != null) {
             _hashCode += getServicoERP().hashCode();
@@ -294,6 +414,13 @@ public class ServicoSigep  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("descricao");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "descricao"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("exigeDimensoes");
         elemField.setXmlName(new javax.xml.namespace.QName("", "exigeDimensoes"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
@@ -311,6 +438,27 @@ public class ServicoSigep  implements java.io.Serializable {
         elemField.setFieldName("imitm");
         elemField.setXmlName(new javax.xml.namespace.QName("", "imitm"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("pagamentoEntrega");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "pagamentoEntrega"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("remessaAgrupada");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "remessaAgrupada"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("restricao");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "restricao"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "simNao"));
+        elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();

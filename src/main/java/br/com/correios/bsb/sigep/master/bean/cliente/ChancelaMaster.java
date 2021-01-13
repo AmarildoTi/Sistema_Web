@@ -8,13 +8,15 @@
 package br.com.correios.bsb.sigep.master.bean.cliente;
 
 public class ChancelaMaster  implements java.io.Serializable {
+    private br.com.correios.bsb.sigep.master.bean.cliente.SimNao ativo;
+
     private byte[] chancela;
 
     private java.util.Calendar dataAtualizacao;
 
     private java.lang.String descricao;
 
-    private long id;
+    private java.lang.Long id;
 
     private br.com.correios.bsb.sigep.master.bean.cliente.ServicoSigep[] servicosSigep;
 
@@ -22,16 +24,38 @@ public class ChancelaMaster  implements java.io.Serializable {
     }
 
     public ChancelaMaster(
+           br.com.correios.bsb.sigep.master.bean.cliente.SimNao ativo,
            byte[] chancela,
            java.util.Calendar dataAtualizacao,
            java.lang.String descricao,
-           long id,
+           java.lang.Long id,
            br.com.correios.bsb.sigep.master.bean.cliente.ServicoSigep[] servicosSigep) {
+           this.ativo = ativo;
            this.chancela = chancela;
            this.dataAtualizacao = dataAtualizacao;
            this.descricao = descricao;
            this.id = id;
            this.servicosSigep = servicosSigep;
+    }
+
+
+    /**
+     * Gets the ativo value for this ChancelaMaster.
+     * 
+     * @return ativo
+     */
+    public br.com.correios.bsb.sigep.master.bean.cliente.SimNao getAtivo() {
+        return ativo;
+    }
+
+
+    /**
+     * Sets the ativo value for this ChancelaMaster.
+     * 
+     * @param ativo
+     */
+    public void setAtivo(br.com.correios.bsb.sigep.master.bean.cliente.SimNao ativo) {
+        this.ativo = ativo;
     }
 
 
@@ -100,7 +124,7 @@ public class ChancelaMaster  implements java.io.Serializable {
      * 
      * @return id
      */
-    public long getId() {
+    public java.lang.Long getId() {
         return id;
     }
 
@@ -110,7 +134,7 @@ public class ChancelaMaster  implements java.io.Serializable {
      * 
      * @param id
      */
-    public void setId(long id) {
+    public void setId(java.lang.Long id) {
         this.id = id;
     }
 
@@ -154,6 +178,9 @@ public class ChancelaMaster  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
+            ((this.ativo==null && other.getAtivo()==null) || 
+             (this.ativo!=null &&
+              this.ativo.equals(other.getAtivo()))) &&
             ((this.chancela==null && other.getChancela()==null) || 
              (this.chancela!=null &&
               java.util.Arrays.equals(this.chancela, other.getChancela()))) &&
@@ -163,7 +190,9 @@ public class ChancelaMaster  implements java.io.Serializable {
             ((this.descricao==null && other.getDescricao()==null) || 
              (this.descricao!=null &&
               this.descricao.equals(other.getDescricao()))) &&
-            this.id == other.getId() &&
+            ((this.id==null && other.getId()==null) || 
+             (this.id!=null &&
+              this.id.equals(other.getId()))) &&
             ((this.servicosSigep==null && other.getServicosSigep()==null) || 
              (this.servicosSigep!=null &&
               java.util.Arrays.equals(this.servicosSigep, other.getServicosSigep())));
@@ -178,6 +207,9 @@ public class ChancelaMaster  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
+        if (getAtivo() != null) {
+            _hashCode += getAtivo().hashCode();
+        }
         if (getChancela() != null) {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getChancela());
@@ -195,7 +227,9 @@ public class ChancelaMaster  implements java.io.Serializable {
         if (getDescricao() != null) {
             _hashCode += getDescricao().hashCode();
         }
-        _hashCode += new Long(getId()).hashCode();
+        if (getId() != null) {
+            _hashCode += getId().hashCode();
+        }
         if (getServicosSigep() != null) {
             for (int i=0;
                  i<java.lang.reflect.Array.getLength(getServicosSigep());
@@ -218,6 +252,13 @@ public class ChancelaMaster  implements java.io.Serializable {
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "chancelaMaster"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("ativo");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "ativo"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "simNao"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("chancela");
         elemField.setXmlName(new javax.xml.namespace.QName("", "chancela"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "base64Binary"));
@@ -242,6 +283,7 @@ public class ChancelaMaster  implements java.io.Serializable {
         elemField.setFieldName("id");
         elemField.setXmlName(new javax.xml.namespace.QName("", "id"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
+        elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();

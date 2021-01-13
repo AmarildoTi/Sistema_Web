@@ -18,13 +18,15 @@ public class Pessoa  implements java.io.Serializable {
 
     private java.lang.String ddd;
 
-    private java.lang.String endereco;
+    private java.lang.String email;
+
+    private java.lang.String logradouro;
 
     private java.lang.String nome;
 
     private java.lang.String numero;
 
-    private java.lang.String pais;
+    private java.lang.String referencia;
 
     private java.lang.String telefone;
 
@@ -39,10 +41,11 @@ public class Pessoa  implements java.io.Serializable {
            java.lang.String cidade,
            java.lang.String complemento,
            java.lang.String ddd,
-           java.lang.String endereco,
+           java.lang.String email,
+           java.lang.String logradouro,
            java.lang.String nome,
            java.lang.String numero,
-           java.lang.String pais,
+           java.lang.String referencia,
            java.lang.String telefone,
            java.lang.String uf) {
            this.bairro = bairro;
@@ -50,10 +53,11 @@ public class Pessoa  implements java.io.Serializable {
            this.cidade = cidade;
            this.complemento = complemento;
            this.ddd = ddd;
-           this.endereco = endereco;
+           this.email = email;
+           this.logradouro = logradouro;
            this.nome = nome;
            this.numero = numero;
-           this.pais = pais;
+           this.referencia = referencia;
            this.telefone = telefone;
            this.uf = uf;
     }
@@ -160,22 +164,42 @@ public class Pessoa  implements java.io.Serializable {
 
 
     /**
-     * Gets the endereco value for this Pessoa.
+     * Gets the email value for this Pessoa.
      * 
-     * @return endereco
+     * @return email
      */
-    public java.lang.String getEndereco() {
-        return endereco;
+    public java.lang.String getEmail() {
+        return email;
     }
 
 
     /**
-     * Sets the endereco value for this Pessoa.
+     * Sets the email value for this Pessoa.
      * 
-     * @param endereco
+     * @param email
      */
-    public void setEndereco(java.lang.String endereco) {
-        this.endereco = endereco;
+    public void setEmail(java.lang.String email) {
+        this.email = email;
+    }
+
+
+    /**
+     * Gets the logradouro value for this Pessoa.
+     * 
+     * @return logradouro
+     */
+    public java.lang.String getLogradouro() {
+        return logradouro;
+    }
+
+
+    /**
+     * Sets the logradouro value for this Pessoa.
+     * 
+     * @param logradouro
+     */
+    public void setLogradouro(java.lang.String logradouro) {
+        this.logradouro = logradouro;
     }
 
 
@@ -220,22 +244,22 @@ public class Pessoa  implements java.io.Serializable {
 
 
     /**
-     * Gets the pais value for this Pessoa.
+     * Gets the referencia value for this Pessoa.
      * 
-     * @return pais
+     * @return referencia
      */
-    public java.lang.String getPais() {
-        return pais;
+    public java.lang.String getReferencia() {
+        return referencia;
     }
 
 
     /**
-     * Sets the pais value for this Pessoa.
+     * Sets the referencia value for this Pessoa.
      * 
-     * @param pais
+     * @param referencia
      */
-    public void setPais(java.lang.String pais) {
-        this.pais = pais;
+    public void setReferencia(java.lang.String referencia) {
+        this.referencia = referencia;
     }
 
 
@@ -305,18 +329,21 @@ public class Pessoa  implements java.io.Serializable {
             ((this.ddd==null && other.getDdd()==null) || 
              (this.ddd!=null &&
               this.ddd.equals(other.getDdd()))) &&
-            ((this.endereco==null && other.getEndereco()==null) || 
-             (this.endereco!=null &&
-              this.endereco.equals(other.getEndereco()))) &&
+            ((this.email==null && other.getEmail()==null) || 
+             (this.email!=null &&
+              this.email.equals(other.getEmail()))) &&
+            ((this.logradouro==null && other.getLogradouro()==null) || 
+             (this.logradouro!=null &&
+              this.logradouro.equals(other.getLogradouro()))) &&
             ((this.nome==null && other.getNome()==null) || 
              (this.nome!=null &&
               this.nome.equals(other.getNome()))) &&
             ((this.numero==null && other.getNumero()==null) || 
              (this.numero!=null &&
               this.numero.equals(other.getNumero()))) &&
-            ((this.pais==null && other.getPais()==null) || 
-             (this.pais!=null &&
-              this.pais.equals(other.getPais()))) &&
+            ((this.referencia==null && other.getReferencia()==null) || 
+             (this.referencia!=null &&
+              this.referencia.equals(other.getReferencia()))) &&
             ((this.telefone==null && other.getTelefone()==null) || 
              (this.telefone!=null &&
               this.telefone.equals(other.getTelefone()))) &&
@@ -349,8 +376,11 @@ public class Pessoa  implements java.io.Serializable {
         if (getDdd() != null) {
             _hashCode += getDdd().hashCode();
         }
-        if (getEndereco() != null) {
-            _hashCode += getEndereco().hashCode();
+        if (getEmail() != null) {
+            _hashCode += getEmail().hashCode();
+        }
+        if (getLogradouro() != null) {
+            _hashCode += getLogradouro().hashCode();
         }
         if (getNome() != null) {
             _hashCode += getNome().hashCode();
@@ -358,8 +388,8 @@ public class Pessoa  implements java.io.Serializable {
         if (getNumero() != null) {
             _hashCode += getNumero().hashCode();
         }
-        if (getPais() != null) {
-            _hashCode += getPais().hashCode();
+        if (getReferencia() != null) {
+            _hashCode += getReferencia().hashCode();
         }
         if (getTelefone() != null) {
             _hashCode += getTelefone().hashCode();
@@ -413,8 +443,15 @@ public class Pessoa  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("endereco");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "endereco"));
+        elemField.setFieldName("email");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "email"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("logradouro");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "logradouro"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
@@ -434,8 +471,8 @@ public class Pessoa  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("pais");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "pais"));
+        elemField.setFieldName("referencia");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "referencia"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);

@@ -12,6 +12,8 @@ public class ObjetoPostal  implements java.io.Serializable {
 
     private java.util.Calendar dataAtualizacaoCliente;
 
+    private java.util.Calendar dataBloqueioObjeto;
+
     private java.util.Calendar dataCancelamentoEtiqueta;
 
     private java.util.Calendar dataInclusao;
@@ -22,6 +24,10 @@ public class ObjetoPostal  implements java.io.Serializable {
 
     private br.com.correios.bsb.sigep.master.bean.cliente.PreListaPostagem preListaPostagem;
 
+    private br.com.correios.bsb.sigep.master.bean.cliente.SimNao restricaoAerea;
+
+    private java.lang.String statusBloqueio;
+
     private br.com.correios.bsb.sigep.master.bean.cliente.StatusObjetoPostal statusEtiqueta;
 
     public ObjetoPostal() {
@@ -30,19 +36,25 @@ public class ObjetoPostal  implements java.io.Serializable {
     public ObjetoPostal(
            java.lang.String codigoEtiqueta,
            java.util.Calendar dataAtualizacaoCliente,
+           java.util.Calendar dataBloqueioObjeto,
            java.util.Calendar dataCancelamentoEtiqueta,
            java.util.Calendar dataInclusao,
            br.com.correios.bsb.sigep.master.bean.cliente.ObjetoPostalPK objetoPostalPK,
            java.lang.Long plpNu,
            br.com.correios.bsb.sigep.master.bean.cliente.PreListaPostagem preListaPostagem,
+           br.com.correios.bsb.sigep.master.bean.cliente.SimNao restricaoAerea,
+           java.lang.String statusBloqueio,
            br.com.correios.bsb.sigep.master.bean.cliente.StatusObjetoPostal statusEtiqueta) {
            this.codigoEtiqueta = codigoEtiqueta;
            this.dataAtualizacaoCliente = dataAtualizacaoCliente;
+           this.dataBloqueioObjeto = dataBloqueioObjeto;
            this.dataCancelamentoEtiqueta = dataCancelamentoEtiqueta;
            this.dataInclusao = dataInclusao;
            this.objetoPostalPK = objetoPostalPK;
            this.plpNu = plpNu;
            this.preListaPostagem = preListaPostagem;
+           this.restricaoAerea = restricaoAerea;
+           this.statusBloqueio = statusBloqueio;
            this.statusEtiqueta = statusEtiqueta;
     }
 
@@ -84,6 +96,26 @@ public class ObjetoPostal  implements java.io.Serializable {
      */
     public void setDataAtualizacaoCliente(java.util.Calendar dataAtualizacaoCliente) {
         this.dataAtualizacaoCliente = dataAtualizacaoCliente;
+    }
+
+
+    /**
+     * Gets the dataBloqueioObjeto value for this ObjetoPostal.
+     * 
+     * @return dataBloqueioObjeto
+     */
+    public java.util.Calendar getDataBloqueioObjeto() {
+        return dataBloqueioObjeto;
+    }
+
+
+    /**
+     * Sets the dataBloqueioObjeto value for this ObjetoPostal.
+     * 
+     * @param dataBloqueioObjeto
+     */
+    public void setDataBloqueioObjeto(java.util.Calendar dataBloqueioObjeto) {
+        this.dataBloqueioObjeto = dataBloqueioObjeto;
     }
 
 
@@ -188,6 +220,46 @@ public class ObjetoPostal  implements java.io.Serializable {
 
 
     /**
+     * Gets the restricaoAerea value for this ObjetoPostal.
+     * 
+     * @return restricaoAerea
+     */
+    public br.com.correios.bsb.sigep.master.bean.cliente.SimNao getRestricaoAerea() {
+        return restricaoAerea;
+    }
+
+
+    /**
+     * Sets the restricaoAerea value for this ObjetoPostal.
+     * 
+     * @param restricaoAerea
+     */
+    public void setRestricaoAerea(br.com.correios.bsb.sigep.master.bean.cliente.SimNao restricaoAerea) {
+        this.restricaoAerea = restricaoAerea;
+    }
+
+
+    /**
+     * Gets the statusBloqueio value for this ObjetoPostal.
+     * 
+     * @return statusBloqueio
+     */
+    public java.lang.String getStatusBloqueio() {
+        return statusBloqueio;
+    }
+
+
+    /**
+     * Sets the statusBloqueio value for this ObjetoPostal.
+     * 
+     * @param statusBloqueio
+     */
+    public void setStatusBloqueio(java.lang.String statusBloqueio) {
+        this.statusBloqueio = statusBloqueio;
+    }
+
+
+    /**
      * Gets the statusEtiqueta value for this ObjetoPostal.
      * 
      * @return statusEtiqueta
@@ -224,6 +296,9 @@ public class ObjetoPostal  implements java.io.Serializable {
             ((this.dataAtualizacaoCliente==null && other.getDataAtualizacaoCliente()==null) || 
              (this.dataAtualizacaoCliente!=null &&
               this.dataAtualizacaoCliente.equals(other.getDataAtualizacaoCliente()))) &&
+            ((this.dataBloqueioObjeto==null && other.getDataBloqueioObjeto()==null) || 
+             (this.dataBloqueioObjeto!=null &&
+              this.dataBloqueioObjeto.equals(other.getDataBloqueioObjeto()))) &&
             ((this.dataCancelamentoEtiqueta==null && other.getDataCancelamentoEtiqueta()==null) || 
              (this.dataCancelamentoEtiqueta!=null &&
               this.dataCancelamentoEtiqueta.equals(other.getDataCancelamentoEtiqueta()))) &&
@@ -239,6 +314,12 @@ public class ObjetoPostal  implements java.io.Serializable {
             ((this.preListaPostagem==null && other.getPreListaPostagem()==null) || 
              (this.preListaPostagem!=null &&
               this.preListaPostagem.equals(other.getPreListaPostagem()))) &&
+            ((this.restricaoAerea==null && other.getRestricaoAerea()==null) || 
+             (this.restricaoAerea!=null &&
+              this.restricaoAerea.equals(other.getRestricaoAerea()))) &&
+            ((this.statusBloqueio==null && other.getStatusBloqueio()==null) || 
+             (this.statusBloqueio!=null &&
+              this.statusBloqueio.equals(other.getStatusBloqueio()))) &&
             ((this.statusEtiqueta==null && other.getStatusEtiqueta()==null) || 
              (this.statusEtiqueta!=null &&
               this.statusEtiqueta.equals(other.getStatusEtiqueta())));
@@ -259,6 +340,9 @@ public class ObjetoPostal  implements java.io.Serializable {
         if (getDataAtualizacaoCliente() != null) {
             _hashCode += getDataAtualizacaoCliente().hashCode();
         }
+        if (getDataBloqueioObjeto() != null) {
+            _hashCode += getDataBloqueioObjeto().hashCode();
+        }
         if (getDataCancelamentoEtiqueta() != null) {
             _hashCode += getDataCancelamentoEtiqueta().hashCode();
         }
@@ -273,6 +357,12 @@ public class ObjetoPostal  implements java.io.Serializable {
         }
         if (getPreListaPostagem() != null) {
             _hashCode += getPreListaPostagem().hashCode();
+        }
+        if (getRestricaoAerea() != null) {
+            _hashCode += getRestricaoAerea().hashCode();
+        }
+        if (getStatusBloqueio() != null) {
+            _hashCode += getStatusBloqueio().hashCode();
         }
         if (getStatusEtiqueta() != null) {
             _hashCode += getStatusEtiqueta().hashCode();
@@ -297,6 +387,13 @@ public class ObjetoPostal  implements java.io.Serializable {
         elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("dataAtualizacaoCliente");
         elemField.setXmlName(new javax.xml.namespace.QName("", "dataAtualizacaoCliente"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("dataBloqueioObjeto");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "dataBloqueioObjeto"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "dateTime"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
@@ -333,6 +430,20 @@ public class ObjetoPostal  implements java.io.Serializable {
         elemField.setFieldName("preListaPostagem");
         elemField.setXmlName(new javax.xml.namespace.QName("", "preListaPostagem"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "preListaPostagem"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("restricaoAerea");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "restricaoAerea"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "simNao"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("statusBloqueio");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "statusBloqueio"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

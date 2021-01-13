@@ -8,6 +8,8 @@
 package br.com.correios.bsb.sigep.master.bean.cliente;
 
 public class ServicoAdicionalERP  implements java.io.Serializable {
+    private java.lang.String categoria;
+
     private java.lang.String codigo;
 
     private java.util.Calendar dataAtualizacao;
@@ -22,17 +24,22 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
 
     private java.lang.String sigla;
 
+    private br.com.correios.bsb.sigep.master.bean.cliente.ValorDeclarado valorDeclarado;
+
     public ServicoAdicionalERP() {
     }
 
     public ServicoAdicionalERP(
+           java.lang.String categoria,
            java.lang.String codigo,
            java.util.Calendar dataAtualizacao,
            java.lang.Integer datajAtualizacao,
            java.lang.String descricao,
            java.lang.Integer horajAtualizacao,
            java.lang.Integer id,
-           java.lang.String sigla) {
+           java.lang.String sigla,
+           br.com.correios.bsb.sigep.master.bean.cliente.ValorDeclarado valorDeclarado) {
+           this.categoria = categoria;
            this.codigo = codigo;
            this.dataAtualizacao = dataAtualizacao;
            this.datajAtualizacao = datajAtualizacao;
@@ -40,6 +47,27 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
            this.horajAtualizacao = horajAtualizacao;
            this.id = id;
            this.sigla = sigla;
+           this.valorDeclarado = valorDeclarado;
+    }
+
+
+    /**
+     * Gets the categoria value for this ServicoAdicionalERP.
+     * 
+     * @return categoria
+     */
+    public java.lang.String getCategoria() {
+        return categoria;
+    }
+
+
+    /**
+     * Sets the categoria value for this ServicoAdicionalERP.
+     * 
+     * @param categoria
+     */
+    public void setCategoria(java.lang.String categoria) {
+        this.categoria = categoria;
     }
 
 
@@ -182,6 +210,26 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
         this.sigla = sigla;
     }
 
+
+    /**
+     * Gets the valorDeclarado value for this ServicoAdicionalERP.
+     * 
+     * @return valorDeclarado
+     */
+    public br.com.correios.bsb.sigep.master.bean.cliente.ValorDeclarado getValorDeclarado() {
+        return valorDeclarado;
+    }
+
+
+    /**
+     * Sets the valorDeclarado value for this ServicoAdicionalERP.
+     * 
+     * @param valorDeclarado
+     */
+    public void setValorDeclarado(br.com.correios.bsb.sigep.master.bean.cliente.ValorDeclarado valorDeclarado) {
+        this.valorDeclarado = valorDeclarado;
+    }
+
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ServicoAdicionalERP)) return false;
@@ -194,6 +242,9 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
         __equalsCalc = obj;
         boolean _equals;
         _equals = true && 
+            ((this.categoria==null && other.getCategoria()==null) || 
+             (this.categoria!=null &&
+              this.categoria.equals(other.getCategoria()))) &&
             ((this.codigo==null && other.getCodigo()==null) || 
              (this.codigo!=null &&
               this.codigo.equals(other.getCodigo()))) &&
@@ -214,7 +265,10 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
               this.id.equals(other.getId()))) &&
             ((this.sigla==null && other.getSigla()==null) || 
              (this.sigla!=null &&
-              this.sigla.equals(other.getSigla())));
+              this.sigla.equals(other.getSigla()))) &&
+            ((this.valorDeclarado==null && other.getValorDeclarado()==null) || 
+             (this.valorDeclarado!=null &&
+              this.valorDeclarado.equals(other.getValorDeclarado())));
         __equalsCalc = null;
         return _equals;
     }
@@ -226,6 +280,9 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
         }
         __hashCodeCalc = true;
         int _hashCode = 1;
+        if (getCategoria() != null) {
+            _hashCode += getCategoria().hashCode();
+        }
         if (getCodigo() != null) {
             _hashCode += getCodigo().hashCode();
         }
@@ -247,6 +304,9 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
         if (getSigla() != null) {
             _hashCode += getSigla().hashCode();
         }
+        if (getValorDeclarado() != null) {
+            _hashCode += getValorDeclarado().hashCode();
+        }
         __hashCodeCalc = false;
         return _hashCode;
     }
@@ -258,6 +318,13 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
     static {
         typeDesc.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "servicoAdicionalERP"));
         org.apache.axis.description.ElementDesc elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("categoria");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "categoria"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("codigo");
         elemField.setXmlName(new javax.xml.namespace.QName("", "codigo"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
@@ -303,6 +370,13 @@ public class ServicoAdicionalERP  implements java.io.Serializable {
         elemField.setFieldName("sigla");
         elemField.setXmlName(new javax.xml.namespace.QName("", "sigla"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
+        elemField.setMinOccurs(0);
+        elemField.setNillable(false);
+        typeDesc.addFieldDesc(elemField);
+        elemField = new org.apache.axis.description.ElementDesc();
+        elemField.setFieldName("valorDeclarado");
+        elemField.setXmlName(new javax.xml.namespace.QName("", "valorDeclarado"));
+        elemField.setXmlType(new javax.xml.namespace.QName("http://cliente.bean.master.sigep.bsb.correios.com.br/", "valorDeclarado"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);

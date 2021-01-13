@@ -23,18 +23,18 @@ public class Destinatario  extends br.com.correios.bsb.sigep.master.bean.cliente
            java.lang.String pais,
            java.lang.String telefone,
            java.lang.String uf) {
-        super(
-            bairro,
-            cep,
-            cidade,
-            complemento,
-            ddd,
-            endereco,
-            nome,
-            numero,
-            pais,
-            telefone,
-            uf);
+//        super(
+//            bairro,
+//            cep,
+//            cidade,
+//            complemento,
+//            ddd,
+//            endereco,
+//            nome,
+//            numero,
+//            pais,
+//            telefone,
+//            uf);
     }
 
     private java.lang.Object __equalsCalc = null;

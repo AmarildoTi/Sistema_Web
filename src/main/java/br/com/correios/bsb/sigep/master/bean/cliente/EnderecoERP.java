@@ -14,13 +14,9 @@ public class EnderecoERP  implements java.io.Serializable {
 
     private java.lang.String cidade;
 
-    private java.lang.String complemento;
-
     private java.lang.String complemento2;
 
     private java.lang.String end;
-
-    private long id;
 
     private java.lang.String uf;
 
@@ -33,19 +29,15 @@ public class EnderecoERP  implements java.io.Serializable {
            java.lang.String bairro,
            java.lang.String cep,
            java.lang.String cidade,
-           java.lang.String complemento,
            java.lang.String complemento2,
            java.lang.String end,
-           long id,
            java.lang.String uf,
            br.com.correios.bsb.sigep.master.bean.cliente.UnidadePostagemERP[] unidadesPostagem) {
            this.bairro = bairro;
            this.cep = cep;
            this.cidade = cidade;
-           this.complemento = complemento;
            this.complemento2 = complemento2;
            this.end = end;
-           this.id = id;
            this.uf = uf;
            this.unidadesPostagem = unidadesPostagem;
     }
@@ -112,26 +104,6 @@ public class EnderecoERP  implements java.io.Serializable {
 
 
     /**
-     * Gets the complemento value for this EnderecoERP.
-     * 
-     * @return complemento
-     */
-    public java.lang.String getComplemento() {
-        return complemento;
-    }
-
-
-    /**
-     * Sets the complemento value for this EnderecoERP.
-     * 
-     * @param complemento
-     */
-    public void setComplemento(java.lang.String complemento) {
-        this.complemento = complemento;
-    }
-
-
-    /**
      * Gets the complemento2 value for this EnderecoERP.
      * 
      * @return complemento2
@@ -168,26 +140,6 @@ public class EnderecoERP  implements java.io.Serializable {
      */
     public void setEnd(java.lang.String end) {
         this.end = end;
-    }
-
-
-    /**
-     * Gets the id value for this EnderecoERP.
-     * 
-     * @return id
-     */
-    public long getId() {
-        return id;
-    }
-
-
-    /**
-     * Sets the id value for this EnderecoERP.
-     * 
-     * @param id
-     */
-    public void setId(long id) {
-        this.id = id;
     }
 
 
@@ -259,16 +211,12 @@ public class EnderecoERP  implements java.io.Serializable {
             ((this.cidade==null && other.getCidade()==null) || 
              (this.cidade!=null &&
               this.cidade.equals(other.getCidade()))) &&
-            ((this.complemento==null && other.getComplemento()==null) || 
-             (this.complemento!=null &&
-              this.complemento.equals(other.getComplemento()))) &&
             ((this.complemento2==null && other.getComplemento2()==null) || 
              (this.complemento2!=null &&
               this.complemento2.equals(other.getComplemento2()))) &&
             ((this.end==null && other.getEnd()==null) || 
              (this.end!=null &&
               this.end.equals(other.getEnd()))) &&
-            this.id == other.getId() &&
             ((this.uf==null && other.getUf()==null) || 
              (this.uf!=null &&
               this.uf.equals(other.getUf()))) &&
@@ -295,16 +243,12 @@ public class EnderecoERP  implements java.io.Serializable {
         if (getCidade() != null) {
             _hashCode += getCidade().hashCode();
         }
-        if (getComplemento() != null) {
-            _hashCode += getComplemento().hashCode();
-        }
         if (getComplemento2() != null) {
             _hashCode += getComplemento2().hashCode();
         }
         if (getEnd() != null) {
             _hashCode += getEnd().hashCode();
         }
-        _hashCode += new Long(getId()).hashCode();
         if (getUf() != null) {
             _hashCode += getUf().hashCode();
         }
@@ -351,13 +295,6 @@ public class EnderecoERP  implements java.io.Serializable {
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("complemento");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "complemento"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
         elemField.setFieldName("complemento2");
         elemField.setXmlName(new javax.xml.namespace.QName("", "complemento2"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
@@ -369,12 +306,6 @@ public class EnderecoERP  implements java.io.Serializable {
         elemField.setXmlName(new javax.xml.namespace.QName("", "end"));
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("id");
-        elemField.setXmlName(new javax.xml.namespace.QName("", "id"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "long"));
         elemField.setNillable(false);
         typeDesc.addFieldDesc(elemField);
         elemField = new org.apache.axis.description.ElementDesc();

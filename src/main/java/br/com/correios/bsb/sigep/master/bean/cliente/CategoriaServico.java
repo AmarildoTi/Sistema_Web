@@ -20,14 +20,14 @@ public class CategoriaServico implements java.io.Serializable {
     public static final java.lang.String _SEM_CATEGORIA = "SEM_CATEGORIA";
     public static final java.lang.String _PAC = "PAC";
     public static final java.lang.String _SEDEX = "SEDEX";
-    public static final java.lang.String _CARTA_REGISTRADA = "CARTA_REGISTRADA";
-    public static final java.lang.String _SERVICO_COM_RESTRICAO = "SERVICO_COM_RESTRICAO";
+    public static final java.lang.String _CARTA = "CARTA";
+    public static final java.lang.String _GRANDES_FORMATOS = "GRANDES_FORMATOS";
     public static final java.lang.String _REVERSO = "REVERSO";
     public static final CategoriaServico SEM_CATEGORIA = new CategoriaServico(_SEM_CATEGORIA);
     public static final CategoriaServico PAC = new CategoriaServico(_PAC);
     public static final CategoriaServico SEDEX = new CategoriaServico(_SEDEX);
-    public static final CategoriaServico CARTA_REGISTRADA = new CategoriaServico(_CARTA_REGISTRADA);
-    public static final CategoriaServico SERVICO_COM_RESTRICAO = new CategoriaServico(_SERVICO_COM_RESTRICAO);
+    public static final CategoriaServico CARTA = new CategoriaServico(_CARTA);
+    public static final CategoriaServico GRANDES_FORMATOS = new CategoriaServico(_GRANDES_FORMATOS);
     public static final CategoriaServico REVERSO = new CategoriaServico(_REVERSO);
     public java.lang.String getValue() { return _value_;}
     public static CategoriaServico fromValue(java.lang.String value)
