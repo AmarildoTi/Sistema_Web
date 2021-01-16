@@ -15,7 +15,7 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 
-import org.primefaces.model.UploadedFile;
+import org.primefaces.model.file.UploadedFile;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -159,7 +159,7 @@ public class CadastroFuncionarioBean implements Serializable {
 
 			DocumentBuilder builder = factory.newDocumentBuilder();
 
-			Document doc = builder.parse(this.file.getInputstream());
+			Document doc = builder.parse(this.file.getInputStream());
 
 			Element element = doc.getDocumentElement();
 
