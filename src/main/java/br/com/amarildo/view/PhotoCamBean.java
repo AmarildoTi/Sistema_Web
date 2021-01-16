@@ -95,11 +95,11 @@ public class PhotoCamBean implements Serializable {
 			NegocioException.MensagemInformacao("Imagem Recortada com sucesso !!!");
 	}
 
-	public void renomearArquivo(String NewImageName) {
+	public void renomearArquivo(String idUsuario) {
 		setNewImageName(filename);
 		ExternalContext externalContext = FacesContext.getCurrentInstance().getExternalContext();
 		String nomeEntrada = externalContext.getRealPath("") + "resources" + File.separator + "Fotos" + File.separator + filename + ".png";
-		String nomeSaida = externalContext.getRealPath("") + "resources" + File.separator + "Fotos" + File.separator + NewImageName + ".png";
+		String nomeSaida = externalContext.getRealPath("") + "resources" + File.separator + "Fotos" + File.separator + idUsuario + ".png";
 		System.out.println("Nome de Entrada = " + nomeEntrada);
 		System.out.println("Nome de Saida   = " + nomeSaida);
 		new File(nomeEntrada).renameTo(new File(nomeSaida));
