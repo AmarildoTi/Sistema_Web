@@ -11,7 +11,7 @@ import java.io.InputStream;
 import javax.inject.Named;
 
 import org.primefaces.event.FileUploadEvent;
-import org.primefaces.model.UploadedFile;
+import org.primefaces.model.file.UploadedFile;
 
 import br.com.amarildo.util.mensagens.NegocioException;
 
@@ -23,7 +23,7 @@ public class FileUploadBean {
 
 		try {  
             UploadedFile arq = event.getFile();  
-            InputStream in = new BufferedInputStream(arq.getInputstream());  
+            InputStream in = new BufferedInputStream(arq.getInputStream());  
 
             File file = new File("C:/Amarildo/Sistema_Web/" + arq.getFileName());//o diretório onde será guardado o arquivo  
             FileOutputStream linhas = new FileOutputStream(file);  
@@ -32,7 +32,7 @@ public class FileUploadBean {
             }  
 
             linhas.close();  
-    		NegocioException.MensagemInformacao(" Arquivo " + arq.getFileName() + " Upaload com sucesso! ");
+            NegocioException.MensagemInformacao(" Arquivo " + arq.getFileName() + " Upaload com sucesso! ");
         } catch (Exception ex) {  
             ex.printStackTrace();  
         } 
